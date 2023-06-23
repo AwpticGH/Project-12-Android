@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "790808144821",
+    "firebase_url": "https://comicable-bba44-default-rtdb.firebaseio.com",
+    "project_id": "comicable-bba44",
+    "storage_bucket": "comicable-bba44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790808144821:android:cb79eb1148bef614d687fc",
+        "android_client_info": {
+          "package_name": "g10.manga.comicable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790808144821-6lmunve70nsmf066oumvr21ucovp3u3l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "g10.manga.comicable",
+            "certificate_hash": "03ca649c17403ce012e15a4bfae61b21f94f194f"
+          }
+        },
+        {
+          "client_id": "790808144821-ad1uujtv5grc3limsh03rhdrmn6lcog6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqF5QDIzb50ZrXwG9As5cxH9FrEU4DrQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790808144821-ad1uujtv5grc3limsh03rhdrmn6lcog6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
