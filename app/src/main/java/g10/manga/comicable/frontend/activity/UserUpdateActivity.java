@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.AuthController;
+import g10.manga.comicable.backend.app.controller.auth.AuthController;
 import g10.manga.comicable.backend.app.controller.CheckpointController;
 import g10.manga.comicable.backend.app.model.AuthModel;
 
@@ -45,50 +45,50 @@ public class UserUpdateActivity extends AppCompatActivity {
         if (model != null)
             setViewAttributes();
         else {
-            controller.read(FirebaseAuth.getInstance().getCurrentUser(), new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        model = task.getResult().getValue(AuthModel.class);
-                        setViewAttributes();
-                    }
-                    else {
-                        Toast.makeText(
-                                getApplicationContext(),
-                                "Failed Getting Account Information",
-                                Toast.LENGTH_SHORT
-                        ).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        finish();
-                    }
-                }
-            });
+//            controller.read(FirebaseAuth.getInstance().getCurrentUser(), new OnCompleteListener<DataSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                    if (task.isSuccessful()) {
+//                        model = task.getResult().getValue(AuthModel.class);
+//                        setViewAttributes();
+//                    }
+//                    else {
+//                        Toast.makeText(
+//                                getApplicationContext(),
+//                                "Failed Getting Account Information",
+//                                Toast.LENGTH_SHORT
+//                        ).show();
+//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                        finish();
+//                    }
+//                }
+//            });
         }
 
         btnUpdate.setOnClickListener(view -> {
-            String email = tvEmail.getText().toString().trim();
-            String password = tvPassword.getText().toString().trim();
-            String name = tvName.getText().toString().trim();
-
-            model.setEmail(email);
-            model.setPassword(password);
-            model.setName(name);
-
-            controller.update(model);
+//            String email = tvEmail.getText().toString().trim();
+//            String password = tvPassword.getText().toString().trim();
+//            String name = tvName.getText().toString().trim();
+//
+//            model.setEmail(email);
+//            model.setPassword(password);
+//            model.setName(name);
+//
+//            controller.update(model);
         });
 
         btnDelete.setOnClickListener(view -> {
-            controller.delete(model);
-            checkpointController.delete(model);
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(this, LoginActivity.class));
-            finish();
+//            controller.delete(model);
+//            checkpointController.delete(model);
+//            FirebaseAuth.getInstance().signOut();
+//            startActivity(new Intent(this, LoginActivity.class));
+//            finish();
         });
     }
 
     private void setViewAttributes() {
-        tvEmail.setText(model.getEmail());
-        tvPassword.setText(model.getPassword());
-        tvName.setText(model.getName());
+//        tvEmail.setText(model.getEmail());
+//        tvPassword.setText(model.getPassword());
+//        tvName.setText(model.getName());
     }
 }

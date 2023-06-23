@@ -104,23 +104,23 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
 
     @SuppressLint("SetTextI18n")
     private void getGreeting() {
-        String[] name = MainActivity.getAuthModel().getName().split(" ");
-        String firstName = name[0];
+//        String[] name = MainActivity.getAuthModel().getName().split(" ");
+//        String firstName = name[0];
         Calendar calendar = Calendar.getInstance();
         int timeOfDay = calendar.get(Calendar.HOUR_OF_DAY);
 
-        if (timeOfDay >= 0 && timeOfDay < 12) {
-            greetText.setText("Selamat Pagi " + firstName);
-        }
-        else if (timeOfDay >= 12 && timeOfDay < 15) {
-            greetText.setText("Selamat Siang " + firstName);
-        }
-        else if (timeOfDay >= 15 && timeOfDay < 18) {
-            greetText.setText("Selamat Sore " + firstName);
-        }
-        else if (timeOfDay >= 18 && timeOfDay < 24) {
-            greetText.setText("Selamat Malam " + firstName);
-        }
+//        if (timeOfDay >= 0 && timeOfDay < 12) {
+//            greetText.setText("Selamat Pagi " + firstName);
+//        }
+//        else if (timeOfDay >= 12 && timeOfDay < 15) {
+//            greetText.setText("Selamat Siang " + firstName);
+//        }
+//        else if (timeOfDay >= 15 && timeOfDay < 18) {
+//            greetText.setText("Selamat Sore " + firstName);
+//        }
+//        else if (timeOfDay >= 18 && timeOfDay < 24) {
+//            greetText.setText("Selamat Malam " + firstName);
+//        }
     }
 
     private void getCall() {
@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
                     // Image Slider
                     for (PopularModel model : popularModels) {
                         SliderModel slider = new SliderModel();
-                        slider.setThumb(model.getImage());
+//                        slider.setThumb(model.getImage());
                         sliderModels.add(slider);
                     }
                     sliderAdapter = new SliderAdapter(sliderModels);

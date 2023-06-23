@@ -1,27 +1,27 @@
-package g10.manga.comicable.backend.app.controller.auth;
+package g10.manga.comicable.backend.app.listener.auth;
 
 import android.app.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.UserProfileChangeRequest;
-
-import java.util.concurrent.ExecutionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
 import g10.manga.comicable.backend.app.config.firebase.DatabaseConfig;
 import g10.manga.comicable.backend.app.model.AuthModel;
 import g10.manga.comicable.dictionary.firebase.DatabaseDictionary;
+import g10.manga.comicable.frontend.helper.ToastHelper;
 
-public class RegisterController {
+public class RegisterListener<T extends AppCompatActivity> {
 
-    public boolean createWithEmailAndPassword(AuthModel model) {
-        Task<AuthResult> task = AuthConfig.getFirebaseAuth().createUserWithEmailAndPassword(model.getEmail(), model.getPassword());
-        boolean created = false;
-        try {
-            Tasks.await(task);
+    public final OnCompleteListener<AuthResult> onCompleteListener;
+
+    public RegisterListener(T activity, AuthModel model) {
+        onCompleteListener = (task) -> {
             if (task.isSuccessful()) {
                 String uid = AuthConfig.getFirebaseUser().getUid();
                 model.setUid(uid);
@@ -30,13 +30,11 @@ public class RegisterController {
                         .setDisplayName(model.getFirst_name())
                         .build();
                 AuthConfig.getFirebaseUser().updateProfile(profileUpdate);
-                created = true;
+                ToastHelper.registerSuccess(activity).show();
             }
-        }
-        catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        return created;
+            else {
+                ToastHelper.registerFailed(activity).show();
+            }
+        };
     }
-
 }

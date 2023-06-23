@@ -203,58 +203,58 @@ public class InfoActivity extends AppCompatActivity implements ChapterListAdapte
     }
 
     private void getChapters(List<ChapterListModel> model) {
-        chapterListAdapter = new ChapterListAdapter(model, getApplicationContext(), this, R.id.llChapter, R.id.btnChapter);
-        recyclerView.setAdapter(chapterListAdapter);
-        progressDialog.dismiss();
+//        chapterListAdapter = new ChapterListAdapter(model, getApplicationContext(), this, R.id.llChapter, R.id.btnChapter);
+//        recyclerView.setAdapter(chapterListAdapter);
+//        progressDialog.dismiss();
     }
 
     private void startMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
+//        startActivity(new Intent(this, MainActivity.class));
+//        finish();
     }
 
     @Override
     public void onSelected(ChapterListModel model) {
-        Intent intent = new Intent(this, (model.getName().equals("Not Available"))
-                                                        ? MainActivity.class
-                                                        : ChapterActivity.class);
-        if (!model.getName().equals("Not Available")) {
-            intent.putExtra("endpoint", model.getEndpoint());
-            if (checkpointModel != null)
-                intent.putExtra("checkpoint", (Serializable)checkpointModel);
-        }
-
-        startActivity(intent);
+//        Intent intent = new Intent(this, (model.getName().equals("Not Available"))
+//                                                        ? MainActivity.class
+//                                                        : ChapterActivity.class);
+//        if (!model.getName().equals("Not Available")) {
+//            intent.putExtra("endpoint", model.getEndpoint());
+//            if (checkpointModel != null)
+//                intent.putExtra("checkpoint", (Serializable)checkpointModel);
+//        }
+//
+//        startActivity(intent);
     }
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
-        Window window = activity.getWindow();
-        WindowManager.LayoutParams winParams = window.getAttributes();
-        if (on)
-            winParams.flags |= bits;
-        else
-            winParams.flags &= ~bits;
-        window.setAttributes(winParams);
+//        Window window = activity.getWindow();
+//        WindowManager.LayoutParams winParams = window.getAttributes();
+//        if (on)
+//            winParams.flags |= bits;
+//        else
+//            winParams.flags &= ~bits;
+//        window.setAttributes(winParams);
     }
 
     private void getCheckpoint(AuthModel authModel, InfoModel infoModel) {
-        Log.d(this.getLocalClassName(), "getCheckpoint (authModel) : " + authModel.getName());
-        checkpointController.read(authModel, infoModel.getTitle(), new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()) {
-                    checkpointModel = task.getResult().getValue(CheckpointModel.class);
-                    if (checkpointModel != null) {
-                        ivFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_heart_button_filled));
-                        favorite = true;
-                    }
-                    else {
-                        ivFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_heart_button));
-                        favorite = false;
-                    }
-                }
-            }
-        });
+//        Log.d(this.getLocalClassName(), "getCheckpoint (authModel) : " + authModel.getName());
+//        checkpointController.read(authModel, infoModel.getTitle(), new OnCompleteListener<DataSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    checkpointModel = task.getResult().getValue(CheckpointModel.class);
+//                    if (checkpointModel != null) {
+//                        ivFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_heart_button_filled));
+//                        favorite = true;
+//                    }
+//                    else {
+//                        ivFavorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_heart_button));
+//                        favorite = false;
+//                    }
+//                }
+//            }
+//        });
     }
 
     public static CheckpointController getCheckpointController() {

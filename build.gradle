@@ -7,14 +7,13 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.15'
-        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'com.android.tools.build:gradle:8.2.0-alpha09'
     }
 }
 
 plugins {
-    // 7.2.2 untuk komputer ccit, 7.3.1 untuk device lain
-    id 'com.android.application' version '8.0.2' apply false
-    id 'com.android.library' version '8.0.2' apply false
+    id 'com.android.application' version '8.2.0-alpha09' apply false
+    id 'com.android.library' version '8.2.0-alpha09' apply false
 }
 
 allprojects {

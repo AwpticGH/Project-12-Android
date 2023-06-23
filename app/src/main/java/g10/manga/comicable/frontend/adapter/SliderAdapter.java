@@ -33,11 +33,11 @@ public class SliderAdapter extends CardSliderAdapter<SliderAdapter.MovieViewHold
 
     @Override
     public void bindVH(MovieViewHolder viewHolder, int position) {
-        Glide.with(viewHolder.itemView)
-                .load(movies.get(position).getThumb())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .override(Target.SIZE_ORIGINAL)
-                .into(viewHolder.imgSlider);
+//        Glide.with(viewHolder.itemView)
+//                .load(movies.get(position).getThumb())
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .override(Target.SIZE_ORIGINAL)
+//                .into(viewHolder.imgSlider);
     }
 
     class MovieViewHolder extends RecyclerView.ViewHolder {

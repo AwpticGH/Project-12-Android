@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.AuthController;
+import g10.manga.comicable.backend.app.controller.auth.AuthController;
 import g10.manga.comicable.backend.app.model.AuthModel;
 
 public class SettingActivity extends AppCompatActivity {
@@ -36,19 +34,19 @@ public class SettingActivity extends AppCompatActivity {
 
         intentLogout = new Intent(this, LoginActivity.class);
 
-        textResult.setText((MainActivity.getAuthModel() != null)
-                ? MainActivity.getAuthModel().getName()
-                : FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-
-        btnLogout.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(intentLogout);
-            finish();
-            controller.makeToast(R.integer.LOGOUT_SUCCESSFUL);
-        });
-
-        btnUpdate.setOnClickListener(v -> {
-            startActivity(new Intent(this, UserUpdateActivity.class));
-        });
+//        textResult.setText((MainActivity.getAuthModel() != null)
+//                ? MainActivity.getAuthModel().getName()
+//                : FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+//
+//        btnLogout.setOnClickListener(v -> {
+//            FirebaseAuth.getInstance().signOut();
+//            startActivity(intentLogout);
+//            finish();
+//            controller.makeToast(R.integer.LOGOUT_SUCCESSFUL);
+//        });
+//
+//        btnUpdate.setOnClickListener(v -> {
+//            startActivity(new Intent(this, UserUpdateActivity.class));
+//        });
     }
 }

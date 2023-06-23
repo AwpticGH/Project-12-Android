@@ -68,25 +68,25 @@ public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjec
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         checkpointController = new CheckpointController();
-        checkpointController.readAll(MainActivity.getAuthModel())
-                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            checkpoints = new ArrayList<>();
-                            for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
-                                checkpoints.add(dataSnapshot.getValue(CheckpointModel.class));
-                            }
-
-                            models = new ArrayList<>();
-                            for (CheckpointModel checkpoint : checkpoints) {
-                                models.add(checkpoint.getManga());
-                            }
-
-                            setAdapter(models);
-                        }
-                    }
-                });
+//        checkpointController.readAll(MainActivity.getAuthModel())
+//                .addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            checkpoints = new ArrayList<>();
+//                            for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
+//                                checkpoints.add(dataSnapshot.getValue(CheckpointModel.class));
+//                            }
+//
+//                            models = new ArrayList<>();
+//                            for (CheckpointModel checkpoint : checkpoints) {
+////                                models.add(checkpoint.getManga());
+//                            }
+//
+//                            setAdapter(models);
+//                        }
+//                    }
+//                });
 
     }
 
