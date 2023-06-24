@@ -39,6 +39,11 @@ public class AuthenticationController {
         return authenticated;
     }
 
+    public boolean logout() {
+        AuthConfig.getFirebaseAuth().signOut();
+        return AuthConfig.getFirebaseUser() == null;
+    }
+
     public boolean update(AuthModel model) {
         UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
                 .setDisplayName(model.getFirst_name())
@@ -55,4 +60,5 @@ public class AuthenticationController {
 
         return updated;
     }
+
 }

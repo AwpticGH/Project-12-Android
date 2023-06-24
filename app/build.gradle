@@ -49,6 +49,7 @@ dependencies {
 
     // CARD GLIDER AND SLIDER
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'com.github.IslamKhSh:CardSlider:1.0.1'
@@ -83,9 +84,9 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
 
     // Tests
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.robolectric:robolectric:4.6.1'
-    testImplementation 'org.mockito:mockito-core:5.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
 //    testImplementation 'org.powermock:powermock-mockito-release-full:1.5.4'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
