@@ -1,22 +1,17 @@
 package g10.manga.comicable.backend.app.controller.firebase;
 
-import android.util.Log;
-
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import g10.manga.comicable.backend.app.config.firebase.DatabaseConfig;
-import g10.manga.comicable.backend.app.model.AuthModel;
-import g10.manga.comicable.backend.app.model.CheckpointModel;
-import g10.manga.comicable.backend.app.model.CollectionModel;
+import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
+import g10.manga.comicable.backend.app.model.firebase.CollectionModel;
 import g10.manga.comicable.dictionary.firebase.DatabaseDictionary;
 
 public class CheckpointController {

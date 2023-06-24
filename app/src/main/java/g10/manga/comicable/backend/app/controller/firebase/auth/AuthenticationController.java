@@ -8,7 +8,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import java.util.concurrent.ExecutionException;
 
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
-import g10.manga.comicable.backend.app.model.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 
 public class AuthenticationController {
 

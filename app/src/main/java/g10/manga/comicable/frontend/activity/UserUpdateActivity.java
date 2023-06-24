@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import g10.manga.comicable.R;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
-import g10.manga.comicable.backend.app.model.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 
 public class UserUpdateActivity extends AppCompatActivity {
 

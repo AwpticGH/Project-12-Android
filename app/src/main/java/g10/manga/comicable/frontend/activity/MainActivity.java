@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.fragment.GenreFragment;
 import g10.manga.comicable.frontend.fragment.HomeFragment;
-import g10.manga.comicable.backend.app.model.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 
 public class MainActivity extends AppCompatActivity {
 

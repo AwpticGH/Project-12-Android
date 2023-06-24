@@ -3,18 +3,17 @@ package g10.manga.comicable.backend.app.controller.firebase;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
-import g10.manga.comicable.backend.app.model.BaseModel;
+import g10.manga.comicable.backend.app.model.firebase.BaseModel;
 import g10.manga.comicable.backend.app.config.firebase.DatabaseConfig;
-import g10.manga.comicable.backend.app.model.AuthModel;
-import g10.manga.comicable.backend.app.model.CheckpointModel;
-import g10.manga.comicable.backend.app.model.CollectionModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
+import g10.manga.comicable.backend.app.model.firebase.CollectionModel;
 import g10.manga.comicable.flag.app.ClazzFlag;
 
 public class BaseController<T extends BaseModel> {

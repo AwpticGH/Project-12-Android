@@ -1,4 +1,4 @@
-package g10.manga.comicable.backend.app.model;
+package g10.manga.comicable.backend.app.model.firebase;
 
 // Implements Serializable?
 public class AuthModel extends BaseModel {

@@ -22,8 +22,8 @@ import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.adapter.ChapterListAdapter;
 import g10.manga.comicable.backend.api.call.InfoCall;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
-import g10.manga.comicable.backend.app.model.AuthModel;
-import g10.manga.comicable.backend.app.model.CheckpointModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
 import g10.manga.comicable.backend.app.model.manga.ChapterListModelOld;
 import g10.manga.comicable.backend.app.model.manga.InfoModelOld;
 

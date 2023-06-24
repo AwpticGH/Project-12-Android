@@ -1,6 +1,4 @@
-package g10.manga.comicable.backend.app.model;
-
-import java.io.Serializable;
+package g10.manga.comicable.backend.app.model.firebase;
 
 public class CheckpointModel extends BaseModel {
 

@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import g10.manga.comicable.backend.app.model.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 
 public class LoginControllerTest {
 

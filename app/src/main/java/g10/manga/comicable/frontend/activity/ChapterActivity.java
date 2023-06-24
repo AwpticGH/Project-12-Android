@@ -15,7 +15,7 @@ import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.adapter.ChapterAdapter;
 import g10.manga.comicable.backend.api.call.ChapterCall;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
-import g10.manga.comicable.backend.app.model.CheckpointModel;
+import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
 import g10.manga.comicable.backend.app.model.manga.ChapterModelOld;
 
 public class ChapterActivity extends AppCompatActivity {

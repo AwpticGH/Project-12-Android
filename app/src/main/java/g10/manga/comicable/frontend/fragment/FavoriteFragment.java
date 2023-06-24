@@ -22,7 +22,7 @@ import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.activity.InfoActivity;
 import g10.manga.comicable.frontend.adapter.PopularAdapter;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
-import g10.manga.comicable.backend.app.model.CheckpointModel;
+import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
 import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 
 public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjectSelected {

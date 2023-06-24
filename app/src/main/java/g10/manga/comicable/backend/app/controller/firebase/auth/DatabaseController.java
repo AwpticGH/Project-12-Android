@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
 import g10.manga.comicable.backend.app.config.firebase.DatabaseConfig;
-import g10.manga.comicable.backend.app.model.AuthModel;
+import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 import g10.manga.comicable.dictionary.firebase.DatabaseDictionary;
 
 public class DatabaseController {
