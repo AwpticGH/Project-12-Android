@@ -15,17 +15,17 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.Target;
 
-import g10.manga.comicable.backend.app.model.manga.ChapterModel;
+import g10.manga.comicable.backend.app.model.manga.ChapterModelOld;
 
 public class ChapterAdapter extends PagerAdapter {
 
-    private ChapterModel data;
+    private ChapterModelOld data;
     private Context context;
     private int layoutId;
     private int tvPaginationId;
     private int imageViewId;
 
-    public ChapterAdapter(ChapterModel data, Context context, int layoutId, int tvPaginationId, int imageViewId) {
+    public ChapterAdapter(ChapterModelOld data, Context context, int layoutId, int tvPaginationId, int imageViewId) {
         this.data = data;
         this.context = context;
         this.layoutId = layoutId;

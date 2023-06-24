@@ -15,20 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.islamkhsh.CardSliderViewPager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.activity.InfoActivity;
-import g10.manga.comicable.frontend.activity.MainActivity;
 import g10.manga.comicable.frontend.adapter.PopularAdapter;
-import g10.manga.comicable.backend.app.controller.CheckpointController;
+import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
 import g10.manga.comicable.backend.app.model.CheckpointModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 
 public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjectSelected {
 
@@ -37,7 +32,7 @@ public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjec
     private CardSliderViewPager cardSliderViewPager;
 
     private PopularAdapter popularAdapter;
-    private List<PopularModel> models;
+    private List<PopularModelOld> models;
 
     private CheckpointController checkpointController;
     private List<CheckpointModel> checkpoints;
@@ -90,7 +85,7 @@ public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjec
 
     }
 
-    private void setAdapter(List<PopularModel> models) {
+    private void setAdapter(List<PopularModelOld> models) {
         popularAdapter = new PopularAdapter(models, getActivity(), this,
                 R.id.cvTerbaru, R.id.tvTitle, R.id.imgPhoto, R.id.tvDate, R.id.tvType);
         recyclerView.setAdapter(popularAdapter);
@@ -98,7 +93,7 @@ public class FavoriteFragment extends Fragment implements PopularAdapter.OnObjec
     }
 
     @Override
-    public void onSelected(PopularModel model) {
+    public void onSelected(PopularModelOld model) {
         Intent intent = new Intent(getActivity(), InfoActivity.class);
         intent.putExtra("endpoint", model.getEndpoint());
         intent.putExtra("comic", model);

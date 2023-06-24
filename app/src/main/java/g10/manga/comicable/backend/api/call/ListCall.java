@@ -4,12 +4,12 @@ import java.util.List;
 
 import g10.manga.comicable.backend.api.interfaces.BaseInterface;
 import g10.manga.comicable.backend.api.model.ListResponseModel;
-import g10.manga.comicable.backend.app.model.manga.ListModel;
+import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 import retrofit2.Call;
 
 public class ListCall extends BaseCall {
 
-    private List<ListModel> lists;
+    private List<ListModelOld> lists;
 
     public ListCall(Class<BaseInterface> myInterface) {
         super(myInterface);

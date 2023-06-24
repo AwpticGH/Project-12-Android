@@ -3,11 +3,9 @@ package g10.manga.comicable.frontend.fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,11 +21,7 @@ import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.activity.InfoActivity;
 import g10.manga.comicable.frontend.adapter.ListAdapter;
 import g10.manga.comicable.backend.api.call.ListCall;
-import g10.manga.comicable.backend.app.model.manga.ListModel;
-import g10.manga.comicable.backend.api.model.ListResponseModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 
 public class GenreFragment extends Fragment implements ListAdapter.OnObjectSelected {
 
@@ -36,7 +30,7 @@ public class GenreFragment extends Fragment implements ListAdapter.OnObjectSelec
     private ProgressDialog progressDialog;
     private CardSliderViewPager cardSliderViewPager;
 
-    private List<ListModel> models;
+    private List<ListModelOld> models;
     private ListCall call;
 
     public GenreFragment() {
@@ -92,7 +86,7 @@ public class GenreFragment extends Fragment implements ListAdapter.OnObjectSelec
 //        });
     }
 
-    private void setAdapter(List<ListModel> models) {
+    private void setAdapter(List<ListModelOld> models) {
         adapter = new ListAdapter(models, getActivity().getApplicationContext(), this,
                 R.id.cvList, R.id.tvTitle, R.id.ivThumbnail);
         recyclerView.setAdapter(adapter);
@@ -100,7 +94,7 @@ public class GenreFragment extends Fragment implements ListAdapter.OnObjectSelec
     }
 
     @Override
-    public void onObjectSelected(ListModel model) {
+    public void onObjectSelected(ListModelOld model) {
         Intent intent = new Intent(getActivity(), InfoActivity.class);
         intent.putExtra("endpoint", model.getEndpoint());
         startActivity(intent);

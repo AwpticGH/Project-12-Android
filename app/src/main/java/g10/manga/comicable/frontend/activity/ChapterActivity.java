@@ -2,13 +2,10 @@ package g10.manga.comicable.frontend.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -17,13 +14,9 @@ import androidx.viewpager.widget.ViewPager;
 import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.adapter.ChapterAdapter;
 import g10.manga.comicable.backend.api.call.ChapterCall;
-import g10.manga.comicable.backend.app.controller.CheckpointController;
+import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
 import g10.manga.comicable.backend.app.model.CheckpointModel;
-import g10.manga.comicable.backend.app.model.manga.ChapterModel;
-import g10.manga.comicable.backend.api.model.ChapterResponseModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import g10.manga.comicable.backend.app.model.manga.ChapterModelOld;
 
 public class ChapterActivity extends AppCompatActivity {
 
@@ -35,7 +28,7 @@ public class ChapterActivity extends AppCompatActivity {
     private Button btnNext, btnPrev;
 
     private ChapterCall call;
-    private ChapterModel model;
+    private ChapterModelOld model;
     private ChapterAdapter adapter;
 
     private CheckpointModel checkpointModel;
@@ -117,7 +110,7 @@ public class ChapterActivity extends AppCompatActivity {
 //        });
     }
 
-    private void setImage(ChapterModel chapterModel) {
+    private void setImage(ChapterModelOld chapterModel) {
         adapter = new ChapterAdapter(chapterModel, this, R.layout.list_item_detail_chapter, R.id.tvPagination, R.id.imgChapter);
         viewPager.setAdapter(adapter);
     }

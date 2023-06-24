@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import g10.manga.comicable.backend.app.model.manga.ListModel;
+import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 
 public class ListResponseModel extends ResponseModel {
 
     @SerializedName("data")
-    private List<ListModel> lists;
+    private List<ListModelOld> lists;
 
-    public List<ListModel> getLists() {
+    public List<ListModelOld> getLists() {
         return lists;
     }
 }

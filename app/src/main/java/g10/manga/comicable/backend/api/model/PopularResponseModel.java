@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 
 public class PopularResponseModel extends ResponseModel {
 
-    @SerializedName("data") private List<PopularModel> populars;
+    @SerializedName("data") private List<PopularModelOld> populars;
 
-    public List<PopularModel> getPopulars() {
+    public List<PopularModelOld> getPopulars() {
         return populars;
     }
 }

@@ -2,12 +2,12 @@ package g10.manga.comicable.backend.api.call;
 
 import g10.manga.comicable.backend.api.interfaces.BaseInterface;
 import g10.manga.comicable.backend.api.model.InfoResponseModel;
-import g10.manga.comicable.backend.app.model.manga.InfoModel;
+import g10.manga.comicable.backend.app.model.manga.InfoModelOld;
 import retrofit2.Call;
 
 public class InfoCall extends BaseCall{
 
-    private InfoModel info;
+    private InfoModelOld info;
 
     public InfoCall(Class<BaseInterface> myInterface) {
         super(myInterface);

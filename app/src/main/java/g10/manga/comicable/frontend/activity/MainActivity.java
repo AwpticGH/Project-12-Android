@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -14,7 +13,6 @@ import com.akshay.library.CurveBottomBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.auth.AuthController;
 import g10.manga.comicable.frontend.fragment.GenreFragment;
 import g10.manga.comicable.frontend.fragment.HomeFragment;
 import g10.manga.comicable.backend.app.model.AuthModel;

@@ -2,48 +2,30 @@ package g10.manga.comicable.frontend.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import g10.manga.comicable.R;
 //import g10.manga.comicable.databinding.ActivityInfoBinding;
 import g10.manga.comicable.frontend.adapter.ChapterListAdapter;
 import g10.manga.comicable.backend.api.call.InfoCall;
-import g10.manga.comicable.backend.app.controller.CheckpointController;
+import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
 import g10.manga.comicable.backend.app.model.AuthModel;
 import g10.manga.comicable.backend.app.model.CheckpointModel;
-import g10.manga.comicable.backend.app.model.manga.ChapterListModel;
-import g10.manga.comicable.backend.app.model.manga.InfoModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
-import g10.manga.comicable.backend.api.model.InfoResponseModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import g10.manga.comicable.backend.app.model.manga.ChapterListModelOld;
+import g10.manga.comicable.backend.app.model.manga.InfoModelOld;
 
 public class InfoActivity extends AppCompatActivity implements ChapterListAdapter.OnObjectSelected {
 
@@ -54,10 +36,10 @@ public class InfoActivity extends AppCompatActivity implements ChapterListAdapte
 
     private String infoEndpoint;
     private InfoCall infoCall;
-    private InfoModel infoModel;
+    private InfoModelOld infoModel;
     private ChapterListAdapter chapterListAdapter;
     private ProgressDialog progressDialog;
-    private List<ChapterListModel> chapterList;
+    private List<ChapterListModelOld> chapterList;
 
     private static CheckpointController checkpointController;
     private static CheckpointModel checkpointModel;
@@ -202,7 +184,7 @@ public class InfoActivity extends AppCompatActivity implements ChapterListAdapte
 //        });
     }
 
-    private void getChapters(List<ChapterListModel> model) {
+    private void getChapters(List<ChapterListModelOld> model) {
 //        chapterListAdapter = new ChapterListAdapter(model, getApplicationContext(), this, R.id.llChapter, R.id.btnChapter);
 //        recyclerView.setAdapter(chapterListAdapter);
 //        progressDialog.dismiss();
@@ -214,7 +196,7 @@ public class InfoActivity extends AppCompatActivity implements ChapterListAdapte
     }
 
     @Override
-    public void onSelected(ChapterListModel model) {
+    public void onSelected(ChapterListModelOld model) {
 //        Intent intent = new Intent(this, (model.getName().equals("Not Available"))
 //                                                        ? MainActivity.class
 //                                                        : ChapterActivity.class);
@@ -237,7 +219,7 @@ public class InfoActivity extends AppCompatActivity implements ChapterListAdapte
 //        window.setAttributes(winParams);
     }
 
-    private void getCheckpoint(AuthModel authModel, InfoModel infoModel) {
+    private void getCheckpoint(AuthModel authModel, InfoModelOld infoModel) {
 //        Log.d(this.getLocalClassName(), "getCheckpoint (authModel) : " + authModel.getName());
 //        checkpointController.read(authModel, infoModel.getTitle(), new OnCompleteListener<DataSnapshot>() {
 //            @Override

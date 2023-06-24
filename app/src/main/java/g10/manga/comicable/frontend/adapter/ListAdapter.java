@@ -18,18 +18,18 @@ import com.bumptech.glide.request.target.Target;
 import java.util.List;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.model.manga.ListModel;
+import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    private List<ListModel> data;
+    private List<ListModelOld> data;
     private Context context;
     private ListAdapter.OnObjectSelected onObjectSelected;
     private int cardViewId;
     private int textViewId;
     private int imageViewId;
 
-    public ListAdapter(List<ListModel> data, Context context, ListAdapter.OnObjectSelected onObjectSelected,
+    public ListAdapter(List<ListModelOld> data, Context context, ListAdapter.OnObjectSelected onObjectSelected,
                        int cardViewId, int textViewId, int imageViewId) {
         this.data = data;
         this.context = context;
@@ -48,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ListModel model = data.get(position);
+        ListModelOld model = data.get(position);
 
         Glide.with(context)
                 .load(model.getImage())
@@ -72,7 +72,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public interface OnObjectSelected {
-        void onObjectSelected(ListModel model);
+        void onObjectSelected(ListModelOld model);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class ChapterModel extends BaseModel {
+public class ChapterModelOld extends OldBaseModel {
 
     private String title;
     @SerializedName("image")

@@ -2,7 +2,7 @@ package g10.manga.comicable.backend.app.model.manga;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RecommendedModel extends BaseModel {
+public class RecommendedModelOld extends OldBaseModel {
 
     private String title;
     private String image;

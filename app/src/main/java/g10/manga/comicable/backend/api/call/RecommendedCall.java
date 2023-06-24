@@ -1,25 +1,19 @@
 package g10.manga.comicable.backend.api.call;
 
-import android.util.Log;
-
 import java.util.List;
 
 import g10.manga.comicable.backend.api.interfaces.BaseInterface;
-import g10.manga.comicable.backend.app.model.manga.RecommendedModel;
-import g10.manga.comicable.backend.api.model.RecommendedResponseModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import g10.manga.comicable.backend.app.model.manga.RecommendedModelOld;
 
 public class RecommendedCall extends BaseCall {
 
-    private List<RecommendedModel> recommendeds;
+    private List<RecommendedModelOld> recommendeds;
 
     public RecommendedCall(Class<BaseInterface> myInterface) {
         super(myInterface);
     }
 
-    public List<RecommendedModel> getRecommendeds(int page) {
+    public List<RecommendedModelOld> getRecommendeds(int page) {
         return null;
 //        Call<RecommendedResponseModel> call = api.getRecommendedComics(page);
 //        call.enqueue(new Callback<RecommendedResponseModel>() {

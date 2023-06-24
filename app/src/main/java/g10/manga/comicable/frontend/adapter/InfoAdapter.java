@@ -13,12 +13,12 @@ import androidx.annotation.NonNull;
 import java.util.Arrays;
 
 import g10.manga.comicable.frontend.helper.ImageHelper;
-import g10.manga.comicable.backend.app.model.manga.ChapterListModel;
-import g10.manga.comicable.backend.app.model.manga.InfoModel;
+import g10.manga.comicable.backend.app.model.manga.ChapterListModelOld;
+import g10.manga.comicable.backend.app.model.manga.InfoModelOld;
 
-public class InfoAdapter extends ArrayAdapter<ChapterListModel> {
+public class InfoAdapter extends ArrayAdapter<ChapterListModelOld> {
 
-    private InfoModel data;
+    private InfoModelOld data;
     private Context context;
     private int layoutId;
     private int imageViewId;
@@ -30,7 +30,7 @@ public class InfoAdapter extends ArrayAdapter<ChapterListModel> {
     private int tvGenreId;
     private int tvChapterNameId;
 
-    public InfoAdapter(@NonNull Context context, int resource, InfoModel object, int layoutId, int imageViewId, int tvTitleId, int tvTypeId, int tvAuthorId, int tvStatusId, int tvRatingId, int tvGenreId, int tvChapterNameId) {
+    public InfoAdapter(@NonNull Context context, int resource, InfoModelOld object, int layoutId, int imageViewId, int tvTitleId, int tvTypeId, int tvAuthorId, int tvStatusId, int tvRatingId, int tvGenreId, int tvChapterNameId) {
         super(context, resource, object.getChapterList());
         this.context = context;
         this.data = data;

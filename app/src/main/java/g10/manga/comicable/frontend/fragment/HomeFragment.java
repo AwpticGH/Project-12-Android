@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,12 +27,11 @@ import java.util.List;
 
 import g10.manga.comicable.R;
 import g10.manga.comicable.frontend.activity.InfoActivity;
-import g10.manga.comicable.frontend.activity.MainActivity;
 import g10.manga.comicable.frontend.adapter.PopularAdapter;
 import g10.manga.comicable.frontend.adapter.SliderAdapter;
 import g10.manga.comicable.backend.api.call.PopularCall;
 import g10.manga.comicable.backend.app.model.SliderModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 import g10.manga.comicable.backend.api.model.PopularResponseModel;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,7 +44,7 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
     private PopularAdapter popularAdapter;
     private ProgressDialog progressDialog;
     private CardSliderViewPager cardSliderViewPager;
-    private List<PopularModel> popularModels = new ArrayList<>();
+    private List<PopularModelOld> popularModels = new ArrayList<>();
     private List<SliderModel> sliderModels = new ArrayList<>();
     private PopularCall popularCall;
     private TextView greetText;
@@ -132,7 +130,7 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
                 popularModels = response.body().getPopulars();
                 if (popularModels != null) {
                     // Image Slider
-                    for (PopularModel model : popularModels) {
+                    for (PopularModelOld model : popularModels) {
                         SliderModel slider = new SliderModel();
 //                        slider.setThumb(model.getImage());
                         sliderModels.add(slider);
@@ -162,7 +160,7 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
         });
     }
 
-    private void setAdapter(List<PopularModel> models) {
+    private void setAdapter(List<PopularModelOld> models) {
         popularAdapter = new PopularAdapter(models, getActivity(), this,
                 R.id.cvTerbaru, R.id.tvTitle, R.id.imgPhoto, R.id.tvDate, R.id.tvType);
         recyclerView.setAdapter(popularAdapter);
@@ -170,7 +168,7 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
     }
 
     @Override
-    public void onSelected(PopularModel model) {
+    public void onSelected(PopularModelOld model) {
         Intent intent = new Intent(getActivity(), InfoActivity.class);
         intent.putExtra("endpoint", model.getEndpoint());
         intent.putExtra("comic", model);

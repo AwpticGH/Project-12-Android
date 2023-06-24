@@ -9,7 +9,6 @@ import android.widget.EditText;
 import com.google.firebase.auth.FirebaseAuth;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.auth.AuthController;
 import g10.manga.comicable.backend.app.model.AuthModel;
 
 public class RegisterActivity extends AppCompatActivity {

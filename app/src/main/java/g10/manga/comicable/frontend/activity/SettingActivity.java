@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.auth.AuthController;
 import g10.manga.comicable.backend.app.model.AuthModel;
 
 public class SettingActivity extends AppCompatActivity {

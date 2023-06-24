@@ -2,14 +2,11 @@ package g10.manga.comicable.backend.app.model;
 
 import java.io.Serializable;
 
-import g10.manga.comicable.backend.app.model.manga.ChapterModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
-
-public class CheckpointModel implements Serializable {
+public class CheckpointModel extends BaseModel {
 
     // uid
     private String uid;
-    //
+    // collection uid
     private String collection;
     // Comic chapter
     private String chapter;

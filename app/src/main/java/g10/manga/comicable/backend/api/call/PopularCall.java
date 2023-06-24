@@ -4,12 +4,12 @@ import java.util.List;
 
 import g10.manga.comicable.backend.api.interfaces.BaseInterface;
 import g10.manga.comicable.backend.api.model.PopularResponseModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 import retrofit2.Call;
 
 public class PopularCall extends BaseCall {
 
-    private List<PopularModel> populars;
+    private List<PopularModelOld> populars;
 
     public PopularCall(Class<BaseInterface> myInterface) {
         super(myInterface);

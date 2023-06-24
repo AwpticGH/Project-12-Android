@@ -19,11 +19,11 @@ import com.bumptech.glide.request.target.Target;
 import java.util.List;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.model.manga.PopularModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
 
-    private List<PopularModel> data;
+    private List<PopularModelOld> data;
     private Context context;
     private PopularAdapter.OnObjectSelected onObjectSelected;
     private int cardViewId;
@@ -32,7 +32,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     private int tvDescId;
     private int tvTypeId;
 
-    public PopularAdapter(List<PopularModel> data, Context context, OnObjectSelected onObjectSelected,
+    public PopularAdapter(List<PopularModelOld> data, Context context, OnObjectSelected onObjectSelected,
                           int cardViewId, int tvTitleId, int imageViewId, int tvDescId, int tvTypeId) {
         this.data = data;
         this.context = context;
@@ -52,7 +52,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final PopularModel model = data.get(position);
+        final PopularModelOld model = data.get(position);
 
         if (model.getType().equals("Manhua"))
             holder.tvType.setTextColor(Color.parseColor("#ff27AE60"));
@@ -84,7 +84,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     public interface OnObjectSelected {
-        void onSelected(PopularModel model);
+        void onSelected(PopularModelOld model);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

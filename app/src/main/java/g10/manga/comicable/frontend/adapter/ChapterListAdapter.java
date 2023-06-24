@@ -13,17 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.model.manga.ChapterListModel;
+import g10.manga.comicable.backend.app.model.manga.ChapterListModelOld;
 
 public class ChapterListAdapter extends RecyclerView.Adapter<ChapterListAdapter.ViewHolder> {
 
-    private List<ChapterListModel> data;
+    private List<ChapterListModelOld> data;
     private Context context;
     private ChapterListAdapter.OnObjectSelected onObjectSelected;
     private int layoutId;
     private int btnChapterNameId;
 
-    public ChapterListAdapter(List<ChapterListModel> data, Context context, ChapterListAdapter.OnObjectSelected onObjectSelected, int layoutId, int btnChapterNameId) {
+    public ChapterListAdapter(List<ChapterListModelOld> data, Context context, ChapterListAdapter.OnObjectSelected onObjectSelected, int layoutId, int btnChapterNameId) {
         this.data = data;
         this.context = context;
         this.onObjectSelected = onObjectSelected;
@@ -41,7 +41,7 @@ public class ChapterListAdapter extends RecyclerView.Adapter<ChapterListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final ChapterListModel model = data.get(position);
+        final ChapterListModelOld model = data.get(position);
 
         holder.button.setText(model.getName());
         holder.button.setOnClickListener(view -> {
@@ -55,7 +55,7 @@ public class ChapterListAdapter extends RecyclerView.Adapter<ChapterListAdapter.
     }
 
     public interface OnObjectSelected {
-        void onSelected(ChapterListModel model);
+        void onSelected(ChapterListModelOld model);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

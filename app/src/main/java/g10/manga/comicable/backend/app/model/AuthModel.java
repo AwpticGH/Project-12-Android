@@ -1,7 +1,7 @@
 package g10.manga.comicable.backend.app.model;
 
 // Implements Serializable?
-public class AuthModel {
+public class AuthModel extends BaseModel {
 
     private String uid;
     private String address;

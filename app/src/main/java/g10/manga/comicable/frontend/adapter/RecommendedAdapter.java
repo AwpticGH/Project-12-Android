@@ -18,11 +18,11 @@ import com.bumptech.glide.request.target.Target;
 
 import java.util.List;
 
-import g10.manga.comicable.backend.app.model.manga.RecommendedModel;
+import g10.manga.comicable.backend.app.model.manga.RecommendedModelOld;
 
 public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.ViewHolder> {
 
-    private List<RecommendedModel> data;
+    private List<RecommendedModelOld> data;
     private Context context;
     private RecommendedAdapter.OnObjectSelected onObjectSelected;
     private int cardViewId;
@@ -31,8 +31,8 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     private int tvDescId;
     private int tvTypeId;
 
-    public RecommendedAdapter(List<RecommendedModel> data, Context context, RecommendedAdapter.OnObjectSelected onObjectSelected,
-                          int cardViewId, int tvTitleId, int imageViewId, int tvDescId, int tvTypeId) {
+    public RecommendedAdapter(List<RecommendedModelOld> data, Context context, RecommendedAdapter.OnObjectSelected onObjectSelected,
+                              int cardViewId, int tvTitleId, int imageViewId, int tvDescId, int tvTypeId) {
         this.data = data;
         this.context = context;
         this.onObjectSelected = onObjectSelected;
@@ -51,7 +51,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
 
     @Override
     public void onBindViewHolder(RecommendedAdapter.ViewHolder holder, int position) {
-        final RecommendedModel model = data.get(position);
+        final RecommendedModelOld model = data.get(position);
 
         if (model.getType().equals("Manhua"))
             holder.tvType.setTextColor(Color.parseColor("#ff27AE60"));
@@ -83,7 +83,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     }
 
     public interface OnObjectSelected {
-        void onSelected(RecommendedModel model);
+        void onSelected(RecommendedModelOld model);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

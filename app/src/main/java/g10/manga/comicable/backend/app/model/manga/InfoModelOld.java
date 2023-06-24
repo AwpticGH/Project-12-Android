@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class InfoModel extends BaseModel {
+public class InfoModelOld extends OldBaseModel {
 
     private String thumbnail;
     private String title;
@@ -13,7 +13,7 @@ public class InfoModel extends BaseModel {
     private String status;
     private String rating;
     @SerializedName("genre") private List<String> genres;
-    @SerializedName("chapter_list") private List<ChapterListModel> chapters;
+    @SerializedName("chapter_list") private List<ChapterListModelOld> chapters;
 
     public String getThumbnail() {
         return thumbnail;
@@ -43,7 +43,7 @@ public class InfoModel extends BaseModel {
         return genres;
     }
 
-    public List<ChapterListModel> getChapterList() {
+    public List<ChapterListModelOld> getChapterList() {
         return chapters;
     }
 }

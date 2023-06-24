@@ -2,14 +2,14 @@ package g10.manga.comicable.backend.api.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import g10.manga.comicable.backend.app.model.manga.InfoModel;
+import g10.manga.comicable.backend.app.model.manga.InfoModelOld;
 
 public class InfoResponseModel extends ResponseModel {
 
     @SerializedName("data")
-    private InfoModel info;
+    private InfoModelOld info;
 
-    public InfoModel getInfo() {
+    public InfoModelOld getInfo() {
         return info;
     }
 }

@@ -1,9 +1,11 @@
 package g10.manga.comicable.backend.app.model.manga;
 
-public class ListModel extends BaseModel {
+public class SearchModelOld extends OldBaseModel {
 
     private String title;
     private String image;
+    private String description;
+    private String type;
     private String endpoint;
 
     public String getTitle() {
@@ -20,6 +22,22 @@ public class ListModel extends BaseModel {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getEndpoint() {

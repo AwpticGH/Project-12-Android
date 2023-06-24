@@ -3,7 +3,6 @@ package g10.manga.comicable.frontend.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import com.google.firebase.auth.FirebaseAuth;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.backend.app.controller.auth.AuthController;
 
 public class LoginActivity extends AppCompatActivity {
 
