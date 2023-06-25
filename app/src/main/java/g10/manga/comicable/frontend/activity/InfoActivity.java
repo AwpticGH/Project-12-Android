@@ -20,7 +20,6 @@ import java.util.List;
 import g10.manga.comicable.R;
 //import g10.manga.comicable.databinding.ActivityInfoBinding;
 import g10.manga.comicable.frontend.adapter.ChapterListAdapter;
-import g10.manga.comicable.backend.api.call.InfoCall;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
 import g10.manga.comicable.backend.app.model.firebase.AuthModel;
 import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;

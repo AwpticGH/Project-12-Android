@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Objects;
 
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
 import g10.manga.comicable.backend.app.controller.firebase.auth.AuthenticationController;
@@ -38,7 +39,8 @@ public class CollectionControllerTest {
 
     @After
     public void tearDown() throws Exception {
-
+        collectionController.delete(collectionModel);
+        AuthConfig.getFirebaseUser().delete();
     }
 
     @Test
@@ -78,6 +80,8 @@ public class CollectionControllerTest {
         createBatch();
 
         List<CollectionModel> results = collectionController.read();
+
+        deleteBatch();
         assertNotNull(results);
     }
 
@@ -86,38 +90,47 @@ public class CollectionControllerTest {
         createBatch();
 
         List<CollectionModel> results = collectionController.read();
+
+        deleteBatch();
         assertEquals(results.size(), 3);
     }
 
     @Test
-    public void readAllComicsNotNull_success() {
+    public void readAllComicsUidEqualsToCurrentUserUid_success() {
         createBatch();
 
         List<CollectionModel> results = collectionController.read();
-        assertNotNull(results);
-    }
 
-    @Test
-    public void readAllComicsNotNull_success() {
-        createBatch();
+        boolean isEqual = true;
+        for (CollectionModel result : results) {
+            if (!Objects.equals(result.getUser(), AuthConfig.getFirebaseUser().getUid())) {
+                isEqual = false;
+            }
+        }
 
-        List<CollectionModel> results = collectionController.read();
-        assertNotNull(results);
+        deleteBatch();
+        assertTrue(isEqual);
     }
 
     @Test
     public void create_success() {
+        boolean result = collectionController.create(collectionModel);
+
+        assertTrue(result);
     }
 
     @Test
     public void delete_success() {
+        collectionController.create(collectionModel);
+
+        boolean result = collectionController.delete(collectionModel);
+
+        collectionController.create(collectionModel); // to make sure the tearDown method works fine
+
+        assertTrue(result);
     }
 
     private void createBatch() {
-        CollectionModel model1 = new CollectionModel();
-        model1.setTitle("Kang Item");
-        model1.setUser(AuthConfig.getFirebaseAuth().getUid());
-
         CollectionModel model2 = new CollectionModel();
         model2.setTitle("Ranker's Return (Remake)");
         model2.setUser(AuthConfig.getFirebaseAuth().getUid());
@@ -127,12 +140,27 @@ public class CollectionControllerTest {
         model3.setUser(AuthConfig.getFirebaseAuth().getUid());
 
         CollectionModel[] array = new CollectionModel[3];
-        array[0] = model1;
+        array[0] = collectionModel;
         array[1] = model2;
         array[2] = model3;
 
         for (CollectionModel data : array) {
             collectionController.create(data);
+        }
+    }
+
+    private void deleteBatch() {
+        CollectionModel[] array = new CollectionModel[2];
+        array[0] = new CollectionModel();
+        array[0].setTitle("Ranker's Return (Remake)");
+        array[0].setUser(AuthConfig.getFirebaseUser().getUid());
+
+        array[1] = new CollectionModel();
+        array[1].setTitle("Superhuman Battlefield");
+        array[1].setUser(AuthConfig.getFirebaseUser().getUid());
+
+        for (CollectionModel data : array) {
+            collectionController.delete(data);
         }
     }
 }

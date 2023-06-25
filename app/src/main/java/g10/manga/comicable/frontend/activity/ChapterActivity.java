@@ -16,7 +16,6 @@ import g10.manga.comicable.frontend.adapter.ChapterAdapter;
 import g10.manga.comicable.backend.api.call.ChapterCall;
 import g10.manga.comicable.backend.app.controller.firebase.CheckpointController;
 import g10.manga.comicable.backend.app.model.firebase.CheckpointModel;
-import g10.manga.comicable.backend.app.model.manga.ChapterModelOld;
 
 public class ChapterActivity extends AppCompatActivity {
 
@@ -28,7 +27,6 @@ public class ChapterActivity extends AppCompatActivity {
     private Button btnNext, btnPrev;
 
     private ChapterCall call;
-    private ChapterModelOld model;
     private ChapterAdapter adapter;
 
     private CheckpointModel checkpointModel;
@@ -108,11 +106,6 @@ public class ChapterActivity extends AppCompatActivity {
 //                finish();
 //            }
 //        });
-    }
-
-    private void setImage(ChapterModelOld chapterModel) {
-        adapter = new ChapterAdapter(chapterModel, this, R.layout.list_item_detail_chapter, R.id.tvPagination, R.id.imgChapter);
-        viewPager.setAdapter(adapter);
     }
 
     @Override

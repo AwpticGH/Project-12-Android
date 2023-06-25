@@ -18,10 +18,9 @@ import com.github.islamkhsh.CardSliderViewPager;
 import java.util.List;
 
 import g10.manga.comicable.R;
+import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 import g10.manga.comicable.frontend.activity.InfoActivity;
 import g10.manga.comicable.frontend.adapter.ListAdapter;
-import g10.manga.comicable.backend.api.call.ListCall;
-import g10.manga.comicable.backend.app.model.manga.ListModelOld;
 
 public class GenreFragment extends Fragment implements ListAdapter.OnObjectSelected {
 

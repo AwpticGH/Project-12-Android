@@ -29,6 +29,11 @@ public class AuthenticationControllerTest {
         model.setVerified(false);
     }
 
+    @After
+    public void tearDown() throws Exception {
+        AuthConfig.getFirebaseUser().delete();
+    }
+
     @Test
     public void testCreate_success() {
         // creates a new account that has not been registered
@@ -83,11 +88,6 @@ public class AuthenticationControllerTest {
         }
 
         Assert.assertEquals(AuthConfig.getFirebaseUser().getDisplayName(), model.getFirst_name());
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        AuthConfig.getFirebaseUser().delete();
     }
 
 }

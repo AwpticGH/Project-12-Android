@@ -26,13 +26,11 @@ import java.util.Calendar;
 import java.util.List;
 
 import g10.manga.comicable.R;
+import g10.manga.comicable.backend.app.model.SliderModel;
+import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
 import g10.manga.comicable.frontend.activity.InfoActivity;
 import g10.manga.comicable.frontend.adapter.PopularAdapter;
 import g10.manga.comicable.frontend.adapter.SliderAdapter;
-import g10.manga.comicable.backend.api.call.PopularCall;
-import g10.manga.comicable.backend.app.model.SliderModel;
-import g10.manga.comicable.backend.app.model.manga.PopularModelOld;
-import g10.manga.comicable.backend.api.model.PopularResponseModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,11 +43,11 @@ public class HomeFragment extends Fragment implements PopularAdapter.OnObjectSel
     private ProgressDialog progressDialog;
     private CardSliderViewPager cardSliderViewPager;
     private List<PopularModelOld> popularModels = new ArrayList<>();
-    private List<SliderModel> sliderModels = new ArrayList<>();
+    private final List<SliderModel> sliderModels = new ArrayList<>();
     private PopularCall popularCall;
     private TextView greetText;
     private Spinner spPage;
-    private String[] numberPage = {"1", "2", "3", "4", "5"
+    private final String[] numberPage = {"1", "2", "3", "4", "5"
             , "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"
             , "16", "17", "18", "19", "110"};
     private String page;
