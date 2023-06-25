@@ -1,9 +1,4 @@
-05:51:25.726 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-05:51:26.644 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
-05:51:53.836 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - comicable-bba44-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 917ms, init: 0ms
-05:51:54.892 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace comicable-bba44-default-rtdb status Active to Active
-06:30:13.629 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
-namespace comicable-bba44, but the emulator is configured for comicable-bba44-default-rtdb. To 
-opt-out of single project mode add/set the singleProjectMode: false property in 
-the firebase.json emulators config. 
-06:30:13.648 [NamespaceSystem-akka.actor.default-dispatcher-13] INFO com.firebase.core.namespace.NamespaceActor - comicable-bba44 successfully activated FBKV (SurveyIdle(0)) wait: 4ms, init: 0ms
+13:27:50.605 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+13:27:50.800 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+13:27:58.024 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - comicable-bba44-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 143ms, init: 0ms
+13:27:58.120 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace comicable-bba44-default-rtdb status Active to Active
