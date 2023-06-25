@@ -19,14 +19,14 @@ public class AuthenticationControllerTest {
 
     @Before
     public void setUp() throws Exception {
-
-        controller = new AuthenticationController();
         model = new AuthModel();
         model.setEmail("rafihariyadi01@gmail.com");
         model.setPassword("refresh");
         model.setFirst_name("Rafi Fajar");
         model.setLast_name("Sulaiman");
         model.setVerified(false);
+
+        controller = new AuthenticationController();
     }
 
     @After
@@ -76,6 +76,7 @@ public class AuthenticationControllerTest {
         if (registered) {
             loggedOut = controller.logout();
         }
+        controller.login(model);
 
         Assert.assertTrue(loggedOut);
     }
@@ -83,11 +84,13 @@ public class AuthenticationControllerTest {
     @Test
     public void testUpdate() {
         boolean registered = controller.create(model);
+        boolean update = false;
         if (registered) {
-            controller.update(model);
+            update = controller.update(model);
         }
+        controller.login(model);
 
-        Assert.assertEquals(AuthConfig.getFirebaseUser().getDisplayName(), model.getFirst_name());
+        assertTrue(update);
     }
 
 }

@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +21,10 @@ public class CollectionControllerTest {
     private AuthModel authModel;
     private CollectionController collectionController;
     private CollectionModel collectionModel;
+    private List<CollectionModel> collectionModels;
+    private String title1 = "Ranker's Return (Remake)";
+    private String title2 = "Superhuman Battlefield";
+    private String title3 = "Jancok";
 
     @Before
     public void setUp() throws Exception {
@@ -80,8 +85,10 @@ public class CollectionControllerTest {
         createBatch();
 
         List<CollectionModel> results = collectionController.read();
-
         deleteBatch();
+
+        collectionController.create(collectionModel);
+        collectionModel = collectionController.read(collectionModel.getTitle());
         assertNotNull(results);
     }
 
@@ -90,15 +97,16 @@ public class CollectionControllerTest {
         createBatch();
 
         List<CollectionModel> results = collectionController.read();
-
         deleteBatch();
+
+        collectionController.create(collectionModel);
+        collectionModel = collectionController.read(collectionModel.getTitle());
         assertEquals(results.size(), 3);
     }
 
     @Test
     public void readAllComicsUidEqualsToCurrentUserUid_success() {
         createBatch();
-
         List<CollectionModel> results = collectionController.read();
 
         boolean isEqual = true;
@@ -107,8 +115,11 @@ public class CollectionControllerTest {
                 isEqual = false;
             }
         }
-
         deleteBatch();
+
+        collectionController.create(collectionModel);
+        collectionModel = collectionController.read(collectionModel.getTitle());
+
         assertTrue(isEqual);
     }
 
@@ -131,35 +142,34 @@ public class CollectionControllerTest {
     }
 
     private void createBatch() {
+        CollectionModel model1 = new CollectionModel();
+        model1.setTitle(title1);
+        model1.setUser(AuthConfig.getFirebaseUser().getUid());
+
         CollectionModel model2 = new CollectionModel();
-        model2.setTitle("Ranker's Return (Remake)");
+        model2.setTitle(title2);
         model2.setUser(AuthConfig.getFirebaseAuth().getUid());
 
         CollectionModel model3 = new CollectionModel();
-        model3.setTitle("Superhuman Battlefield");
+        model3.setTitle(title3);
         model3.setUser(AuthConfig.getFirebaseAuth().getUid());
 
-        CollectionModel[] array = new CollectionModel[3];
-        array[0] = collectionModel;
-        array[1] = model2;
-        array[2] = model3;
+        collectionModels = new ArrayList<>();
+        collectionModels.add(0, model1);
+        collectionModels.add(1, model2);
+        collectionModels.add(2, model3);
 
-        for (CollectionModel data : array) {
+        for (CollectionModel data : collectionModels) {
             collectionController.create(data);
         }
     }
 
     private void deleteBatch() {
-        CollectionModel[] array = new CollectionModel[2];
-        array[0] = new CollectionModel();
-        array[0].setTitle("Ranker's Return (Remake)");
-        array[0].setUser(AuthConfig.getFirebaseUser().getUid());
+        collectionModels.set(0, collectionController.read(title1));
+        collectionModels.set(1, collectionController.read(title2));
+        collectionModels.set(2, collectionController.read(title3));
 
-        array[1] = new CollectionModel();
-        array[1].setTitle("Superhuman Battlefield");
-        array[1].setUser(AuthConfig.getFirebaseUser().getUid());
-
-        for (CollectionModel data : array) {
+        for (CollectionModel data : collectionModels) {
             collectionController.delete(data);
         }
     }

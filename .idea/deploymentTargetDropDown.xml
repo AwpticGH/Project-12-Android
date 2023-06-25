@@ -2,16 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="LoginControllerTest">
+      <entry key="AuthenticationControllerTest">
         <State />
       </entry>
-      <entry key="RegisterControllerTest">
+      <entry key="Tests in 'g10.manga.comicable'">
+        <State />
+      </entry>
+      <entry key="Tests in 'g10.manga.comicable.backend.app.controller.firebase.auth'">
         <State />
       </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="successCreateData()">
+      <entry key="testCreate_fail()">
         <State />
       </entry>
     </value>

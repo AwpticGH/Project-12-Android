@@ -96,30 +96,38 @@ public class CheckpointControllerTest {
     @Test
     public void readAllChapter_notNull_success() {
         createBatch();
-
         List<CheckpointModel> results = checkpointController.read(List.of(collectionModels));
-
         deleteBatch();
+
+        checkpointController.create(checkpointModel);
+        checkpointModel = checkpointController.read(checkpointModel, collectionModel);
+
         assertNotNull(results);
     }
 
     @Test
     public void readAllChapter_lengthNotEqualToCollection_success() {
         createBatch();
-
         List<CheckpointModel> results = checkpointController.read(List.of(collectionModels));
-
         deleteBatch();
+
+        checkpointController.create(checkpointModel);
+        checkpointModel = checkpointController.read(checkpointModel, collectionModel);
+
+
         assertNotEquals(results.size(), collectionModels.length);
     }
 
     @Test
     public void readAllChapter_lengthEqualsToCollectionDecreasedByOne_success() {
         createBatch();
-
         List<CheckpointModel> results = checkpointController.read(List.of(collectionModels));
-
         deleteBatch();
+
+        checkpointController.create(checkpointModel);
+        checkpointModel = checkpointController.read(checkpointModel, collectionModel);
+
+
         assertEquals(results.size(), collectionModels.length - 1);
     }
 
@@ -137,8 +145,11 @@ public class CheckpointControllerTest {
                 }
             }
         }
-
         deleteBatch();
+
+        checkpointController.create(checkpointModel);
+        checkpointModel = checkpointController.read(checkpointModel, collectionModel);
+
         assertTrue(Arrays.stream(expecteds).allMatch(Boolean::booleanValue));
     }
 
