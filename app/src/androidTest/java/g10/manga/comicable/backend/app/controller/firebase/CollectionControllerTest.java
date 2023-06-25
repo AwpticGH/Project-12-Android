@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
 import g10.manga.comicable.backend.app.controller.firebase.auth.AuthenticationController;
 import g10.manga.comicable.backend.app.model.firebase.AuthModel;
@@ -72,7 +74,35 @@ public class CollectionControllerTest {
     }
 
     @Test
-    public void readAllComic_success() {
+    public void readAllComicsNotNull_success() {
+        createBatch();
+
+        List<CollectionModel> results = collectionController.read();
+        assertNotNull(results);
+    }
+
+    @Test
+    public void readAllComicsResultEqualsThree_success() {
+        createBatch();
+
+        List<CollectionModel> results = collectionController.read();
+        assertEquals(results.size(), 3);
+    }
+
+    @Test
+    public void readAllComicsNotNull_success() {
+        createBatch();
+
+        List<CollectionModel> results = collectionController.read();
+        assertNotNull(results);
+    }
+
+    @Test
+    public void readAllComicsNotNull_success() {
+        createBatch();
+
+        List<CollectionModel> results = collectionController.read();
+        assertNotNull(results);
     }
 
     @Test
@@ -83,6 +113,26 @@ public class CollectionControllerTest {
     public void delete_success() {
     }
 
-    public void createBatch() {
+    private void createBatch() {
+        CollectionModel model1 = new CollectionModel();
+        model1.setTitle("Kang Item");
+        model1.setUser(AuthConfig.getFirebaseAuth().getUid());
+
+        CollectionModel model2 = new CollectionModel();
+        model2.setTitle("Ranker's Return (Remake)");
+        model2.setUser(AuthConfig.getFirebaseAuth().getUid());
+
+        CollectionModel model3 = new CollectionModel();
+        model3.setTitle("Superhuman Battlefield");
+        model3.setUser(AuthConfig.getFirebaseAuth().getUid());
+
+        CollectionModel[] array = new CollectionModel[3];
+        array[0] = model1;
+        array[1] = model2;
+        array[2] = model3;
+
+        for (CollectionModel data : array) {
+            collectionController.create(data);
+        }
     }
 }
