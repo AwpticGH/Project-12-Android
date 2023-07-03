@@ -11,7 +11,7 @@ import g10.manga.comicable.R;
 
 public class ChaptersViewHolder extends RecyclerView.ViewHolder {
 
-    private AppCompatButton button;
+    private final AppCompatButton button;
 
     public ChaptersViewHolder(@NonNull View itemView) {
         super(itemView);

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import g10.manga.comicable.R;
-import g10.manga.comicable.flag.app.AuthFlag;
+import g10.manga.comicable.flag.backend.firebase.AuthFlag;
 import g10.manga.comicable.frontend.listener.activity.auth.register.ButtonRegisterListener;
 
 public class RegisterActivity extends AppCompatActivity {

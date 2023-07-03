@@ -13,4 +13,8 @@ public class EndpointHelper {
     public static String parseChapterEndpointAsSeries(String endpoint) {
         return endpoint.substring(endpoint.lastIndexOf("/series/") + 8, endpoint.lastIndexOf("/"));
     }
+
+    public static int parseChapterEndpointAsInteger(String endpoint) {
+        return Integer.parseInt(endpoint.substring(endpoint.lastIndexOf("-") + 1));
+    }
 }

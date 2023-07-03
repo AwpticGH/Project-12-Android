@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.akshay.library.CurveBottomBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -183,31 +184,23 @@ public class CurveBottomBarListener extends BaseListener implements NavigationBa
         return item != null && item.getIcon() == null;
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private void fillSearch(MenuItem item) {
-        Log.d(getClass().getSimpleName(), "fillSearch");
-        item.setIcon(activity.getResources().getDrawable(R.drawable.ic_search));
+        item.setIcon(ResourcesCompat.getDrawable(activity.getResources(), R.drawable.ic_search, null));
         item.setTitle(activity.getResources().getString(R.string.navigation_title_search));
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private void fillHome(MenuItem item) {
-        Log.d(getClass().getSimpleName(), "fillHome");
-        item.setIcon(activity.getResources().getDrawable(R.drawable.ic_home));
+        item.setIcon(ResourcesCompat.getDrawable(activity.getResources(), R.drawable.ic_home, null));
         item.setTitle(activity.getResources().getString(R.string.navigation_title_home));
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private void fillProject(MenuItem item) {
-        Log.d(getClass().getSimpleName(), "fillProject");
-        item.setIcon(activity.getResources().getDrawable(R.drawable.ic_project));
+        item.setIcon(ResourcesCompat.getDrawable(activity.getResources(), R.drawable.ic_project, null));
         item.setTitle(activity.getResources().getString(R.string.navigation_title_project));
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private void fillCollection(MenuItem item) {
-        Log.d(getClass().getSimpleName(), "fillCollection");
-        item.setIcon(activity.getResources().getDrawable(R.drawable.ic_comic));
+        item.setIcon(ResourcesCompat.getDrawable(activity.getResources(), R.drawable.ic_comic, null));
         item.setTitle(activity.getResources().getString(R.string.navigation_title_collection));
     }
 }

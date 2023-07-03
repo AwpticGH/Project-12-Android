@@ -1,6 +1,5 @@
 package g10.manga.comicable.frontend.listener.adapter.fragment.project;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -11,7 +10,7 @@ import g10.manga.comicable.backend.api.controller.original.ProjectCall;
 import g10.manga.comicable.backend.api.model.ResponseModel;
 import g10.manga.comicable.backend.api.model.project.DataModel;
 import g10.manga.comicable.frontend.listener.BaseListener;
-import g10.manga.comicable.frontend.listener.callback.ProjectCallback;
+import g10.manga.comicable.frontend.listener.callback.fragment.project.ProjectCallback;
 
 public class SpinnerListener extends BaseListener implements AdapterView.OnItemSelectedListener {
 

@@ -22,6 +22,11 @@ public class CollectionTask {
         return reference.setValue(model);
     }
 
+    public Task<Void> create(CollectionModel model, String uid) {
+        model.setUid(uid);
+        return DatabaseConfig.getDatabaseReference(DatabaseDictionary.REFERENCE_COLLECTION).child(uid).setValue(model);
+    }
+
     public Task<Void> delete(CollectionModel model) {
         return DatabaseConfig.getDatabaseReference(DatabaseDictionary.REFERENCE_COLLECTION)
                 .child(model.getUid())

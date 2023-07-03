@@ -8,4 +8,6 @@ public class IntentDictionary {
     public static final String SERIES_TITLE = "SeriesTitle";
     public static final String COLLECTION_MODEL = "CollectionModel";
     public static final String PROJECT_PAGE = "ProjectPage";
+    public static final String SERIES_IN_COLLECTION = "SeriesInCollection";
+    public static final String COLLECTION_UID = "CollectionUID";
 }

@@ -11,14 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.fragment.app.Fragment;
 
-import java.util.Objects;
-
 import g10.manga.comicable.R;
 import g10.manga.comicable.backend.api.controller.original.ProjectCall;
 import g10.manga.comicable.backend.api.model.ResponseModel;
 import g10.manga.comicable.backend.api.model.project.DataModel;
-import g10.manga.comicable.dictionary.app.IntentDictionary;
-import g10.manga.comicable.frontend.listener.callback.ProjectCallback;
+import g10.manga.comicable.frontend.listener.callback.fragment.project.ProjectCallback;
 
 public class ProjectFragment extends Fragment {
 

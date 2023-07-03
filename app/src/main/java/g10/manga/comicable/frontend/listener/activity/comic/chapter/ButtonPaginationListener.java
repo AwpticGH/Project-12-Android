@@ -23,6 +23,8 @@ public class ButtonPaginationListener extends BaseListener implements View.OnCli
         Intent intent = new Intent(activity, ChapterActivity.class);
         intent.putExtra(IntentDictionary.CHAPTER_ENDPOINT, endpoint);
         intent.putExtra(IntentDictionary.SERIES_TITLE, activity.getIntent().getStringExtra(IntentDictionary.SERIES_TITLE));
+        intent.putExtra(IntentDictionary.COLLECTION_UID, activity.getIntent().getStringExtra(IntentDictionary.COLLECTION_UID));
+
         activity.startActivity(intent);
         activity.finish();
     }

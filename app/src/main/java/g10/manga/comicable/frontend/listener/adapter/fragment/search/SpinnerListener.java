@@ -14,7 +14,7 @@ import g10.manga.comicable.backend.api.controller.original.SearchCall;
 import g10.manga.comicable.backend.api.model.ResponseModel;
 import g10.manga.comicable.backend.api.model.search.DataModel;
 import g10.manga.comicable.frontend.listener.BaseListener;
-import g10.manga.comicable.frontend.listener.callback.SearchCallback;
+import g10.manga.comicable.frontend.listener.callback.fragment.search.SearchCallback;
 
 public class SpinnerListener extends BaseListener implements AdapterView.OnItemSelectedListener {
 

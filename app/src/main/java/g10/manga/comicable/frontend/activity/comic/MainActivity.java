@@ -3,19 +3,16 @@ package g10.manga.comicable.frontend.activity.comic;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
 
 import com.akshay.library.CurveBottomBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import g10.manga.comicable.R;
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
 import g10.manga.comicable.backend.app.task.auth.DatabaseTask;
-import g10.manga.comicable.flag.app.AuthFlag;
+import g10.manga.comicable.flag.backend.firebase.AuthFlag;
 import g10.manga.comicable.frontend.activity.auth.LoginActivity;
 import g10.manga.comicable.frontend.fragment.CollectionFragment;
 import g10.manga.comicable.frontend.fragment.ProjectFragment;
@@ -24,7 +21,6 @@ import g10.manga.comicable.frontend.fragment.SearchFragment;
 import g10.manga.comicable.frontend.listener.activity.comic.main.CurveBottomBarListener;
 import g10.manga.comicable.frontend.listener.activity.comic.main.ImageViewLogoListener;
 import g10.manga.comicable.frontend.listener.firebase.database.users.login.UsersReadListener;
-import g10.manga.comicable.frontend.utils.BottomBarBehavior;
 
 public class MainActivity extends AppCompatActivity {
 

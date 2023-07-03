@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +20,7 @@ import g10.manga.comicable.backend.api.controller.original.HomeCall;
 import g10.manga.comicable.backend.api.model.ResponseModel;
 import g10.manga.comicable.backend.api.model.home.DataModel;
 import g10.manga.comicable.backend.app.config.firebase.AuthConfig;
-import g10.manga.comicable.frontend.listener.callback.HomeCallback;
+import g10.manga.comicable.frontend.listener.callback.fragment.home.HomeCallback;
 
 public class HomeFragment extends Fragment  {
 

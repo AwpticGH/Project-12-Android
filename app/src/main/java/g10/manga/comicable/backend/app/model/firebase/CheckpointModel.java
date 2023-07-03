@@ -6,9 +6,7 @@ public class CheckpointModel extends BaseModel {
     private String uid;
     // collection uid
     private String collection;
-    // Comic chapter
-    private String chapter;
-    // Comic endpoint
+    // Chapter endpoint
     private String endpoint;
 
     public String getUid() {
@@ -25,14 +23,6 @@ public class CheckpointModel extends BaseModel {
 
     public void setCollection(String collection) {
         this.collection = collection;
-    }
-
-    public String getChapter() {
-        return chapter;
-    }
-
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
     }
 
     public String getEndpoint() {
