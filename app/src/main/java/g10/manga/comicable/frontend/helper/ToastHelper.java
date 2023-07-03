@@ -87,4 +87,20 @@ public class ToastHelper {
     public static Toast unknownError(Context context) {
         return Toast.makeText(context, ToastDictionary.UNKNOWN_ERROR, Toast.LENGTH_SHORT);
     }
+
+    public static Toast createCollectionSuccess(Context context) {
+        return Toast.makeText(context, ToastDictionary.CREATE_COLLECTION_SUCCESS, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast createCollectionFailed(Context context) {
+        return Toast.makeText(context, ToastDictionary.CREATE_COLLECTION_FAILED, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast deleteCollectionSuccess(Context context) {
+        return Toast.makeText(context, ToastDictionary.DELETE_COLLECTION_SUCCESS, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast deleteCollectionFailed(Context context) {
+        return Toast.makeText(context, ToastDictionary.DELETE_COLLECTION_FAILED, Toast.LENGTH_SHORT);
+    }
 }

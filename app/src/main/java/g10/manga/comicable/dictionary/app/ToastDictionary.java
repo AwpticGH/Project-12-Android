@@ -21,5 +21,9 @@ public class ToastDictionary {
     public static final String REATTEMPT_REGISTER_TO_DATABASE_SUCCESS = "Successfully Registered Account To Database, Please Update Your Profile To Complete Registering!";
     public static final String WELCOME_MESSAGE = "Welcome, " + AuthConfig.getFirebaseUser().getDisplayName();
     public static final String UNKNOWN_ERROR = "Unknown Error Occurred!!";
+    public static final String CREATE_COLLECTION_SUCCESS = "Successfully Added Series To Collection";
+    public static final String CREATE_COLLECTION_FAILED = "Failed To Add Series To Collection, Try Again Later";
+    public static final String DELETE_COLLECTION_SUCCESS = "Successfully Removed Series From Collection";
+    public static final String DELETE_COLLECTION_FAILED = "Failed To Remove Series From Collection, Try Again Later";
 
 }

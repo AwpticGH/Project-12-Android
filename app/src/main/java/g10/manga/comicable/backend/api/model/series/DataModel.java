@@ -7,14 +7,14 @@ import g10.manga.comicable.backend.api.model.BaseModel;
 
 public class DataModel extends BaseModel implements Serializable {
 
-    private DetailModel detail;
+    private SeriesModel detail;
     private List<ChapterModel> chapters;
 
-    public DetailModel getDetail() {
+    public SeriesModel getDetail() {
         return detail;
     }
 
-    public void setDetail(DetailModel detail) {
+    public void setDetail(SeriesModel detail) {
         this.detail = detail;
     }
 

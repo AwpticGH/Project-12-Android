@@ -50,7 +50,7 @@ public class CollectionFragment extends Fragment {
 
 //        cardSliderViewPager = rootView.findViewById(R.id.viewPager);
 
-        recyclerView = rootView.findViewById(R.id.rvTerbaru);
+        recyclerView = rootView.findViewById(R.id.rv_collection);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

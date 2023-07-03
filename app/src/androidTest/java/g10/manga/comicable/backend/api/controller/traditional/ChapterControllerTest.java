@@ -31,7 +31,7 @@ public class ChapterControllerTest {
 
     @Test
     public void messageIsNotFail() {
-        assertNotEquals(response.getMessage(), ResponseMessages.FAIL);
+        assertNotEquals(response.getMessage(), ResponseMessages.FAILED);
     }
 
     @Test

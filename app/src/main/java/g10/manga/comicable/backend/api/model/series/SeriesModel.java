@@ -3,7 +3,7 @@ package g10.manga.comicable.backend.api.model.series;
 import java.io.Serializable;
 import java.util.List;
 
-public class DetailModel implements Serializable {
+public class SeriesModel implements Serializable {
 
     private String title;
     private String alternative;

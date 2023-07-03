@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.app.model.firebase;
 
-public class CollectionModel extends BaseModel {
+import java.io.Serializable;
+
+public class CollectionModel extends BaseModel implements Serializable {
 
     private String uid;
     // Series title

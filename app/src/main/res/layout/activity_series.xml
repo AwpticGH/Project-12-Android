@@ -1,361 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
     >
 
-    <xyz.sahildave.arclayout.ArcLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        app:arc_cropCurve="cropConvex"
-        app:arc_height="48dp"
-        app:arc_position="bottom">
-
-        <ImageView
-            android:id="@+id/iv_background_activity_series"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:background="@color/colorAccent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/content_desc_background_color_accent" />
-
-    </xyz.sahildave.arclayout.ArcLayout>
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout_activity_series"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:background="@color/colorPrimary"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_activity_series"
+        <xyz.sahildave.arclayout.ArcLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            app:arc_cropCurve="cropConvex"
+            app:arc_height="48dp"
+            app:arc_position="bottom">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_background_activity_series"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@color/colorAccent"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/content_desc_background_color_accent" />
+
+        </xyz.sahildave.arclayout.ArcLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout_activity_series"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:popupTheme="@style/AppTheme.AppBarOverlay"
-            app:title="@string/hint_title_comic"
-            app:titleTextColor="@android:color/black"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"/>
+            android:background="@color/colorPrimary"
+            >
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/app_bar_layout_activity_series">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp">
-
-            <androidx.cardview.widget.CardView
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_activity_series"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@android:color/background_light"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="4dp"
-                >
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:popupTheme="@style/AppTheme.AppBarOverlay"
+                app:title="@string/hint_title_comic"
+                app:titleTextColor="@android:color/black"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"/>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/app_bar_layout_activity_series">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    app:cardBackgroundColor="@android:color/background_light"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
                     >
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cv_thumbnail_activity_series"
-                        android:layout_width="90dp"
-                        android:layout_height="150dp"
-                        app:cardBackgroundColor="@color/colorAccent"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="4dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        >
 
-                        <ImageView
-                            android:id="@+id/iv_thumbnail_activity_series"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_thumbnail_activity_series"
+                            android:layout_width="90dp"
+                            android:layout_height="150dp"
+                            app:cardBackgroundColor="@color/colorAccent"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_thumbnail_activity_series"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:contentDescription="@string/content_desc_iv_thumbnail_activity_series"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_title_activity_series"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:ellipsize="marquee"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:hint="@string/hint_title_comic"
+                            app:layout_constraintTop_toTopOf="@id/cv_thumbnail_activity_series"
+                            app:layout_constraintStart_toEndOf="@id/cv_thumbnail_activity_series"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_alternative_activity_series"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_alternative_comic"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toBottomOf="@id/tv_title_activity_series"
+                            app:layout_constraintStart_toStartOf="@id/tv_title_activity_series"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_type_activity_series"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:hint="@string/hint_type_comic"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@id/tv_status_activity_series"
+                            app:layout_constraintStart_toStartOf="@id/tv_alternative_activity_series"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_status_activity_series"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:hint="@string/hint_status_comic"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@id/cv_thumbnail_activity_series"
+                            app:layout_constraintStart_toStartOf="@id/tv_type_activity_series"/>
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/ib_collection_activity_series"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
-                            android:contentDescription="@string/content_desc_iv_thumbnail_activity_series" />
+                            android:background="@drawable/ic_favorite_heart_button"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:contentDescription="@string/content_desc_iv_collection_activity_series" />
 
-                    </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/tv_title_activity_series"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:ellipsize="marquee"
-                        android:marqueeRepeatLimit="marquee_forever"
-                        android:singleLine="true"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:hint="@string/hint_title_comic"
-                        app:layout_constraintTop_toTopOf="@id/cv_thumbnail_activity_series"
-                        app:layout_constraintStart_toEndOf="@id/cv_thumbnail_activity_series"/>
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/tv_alternative_activity_series"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_alternative_comic"
-                        android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_title_activity_series"
-                        app:layout_constraintStart_toStartOf="@id/tv_title_activity_series"
-                        />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@android:color/background_light"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
-                    <TextView
-                        android:id="@+id/tv_type_activity_series"
-                        android:layout_width="wrap_content"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:singleLine="true"
-                        android:hint="@string/hint_type_comic"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toTopOf="@id/tv_status_activity_series"
-                        app:layout_constraintStart_toStartOf="@id/tv_alternative_activity_series"/>
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/tv_status_activity_series"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:hint="@string/hint_status_comic"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@id/cv_thumbnail_activity_series"
-                        app:layout_constraintStart_toStartOf="@id/tv_type_activity_series"/>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/iv_collection_activity_series"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_favorite_heart_button"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:contentDescription="@string/content_desc_iv_collection_activity_series" />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_author_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/author_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_author_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_sr_author_activity_series"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:hint="@string/hint_author_comic"
+                                android:textSize="12sp" />
 
-            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@android:color/background_light"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="4dp">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
 
-                <LinearLayout
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_artist_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/artist_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_artist_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_sr_artist_activity_series"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:hint="@string/hint_artist_comic"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_rating_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rating_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_rating_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_sr_rating_activity_series"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:hint="@string/hint_rating_comic"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_release_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/release_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_release_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_sr_release_activity_series"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:hint="@string/hint_release_comic"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_genre_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/genres_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_genre_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_sr_genre_activity_series"
+                                android:textColor="@android:color/black"
+                                android:hint="@string/hint_genre_comic"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sr_synopsis_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/synopsis_activity_series"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_synopsis_activity_series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_sr_synopsis_activity_series"
+                                android:textColor="@android:color/black"
+                                android:hint="@string/hint_synopsis_comic"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button_checkpoint_activity_series"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_checkpoint_activity_series"
+                            android:elevation="8dp"
+                            android:text="@string/text_button_checkpoint_activity_series"
+                            android:visibility="gone"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/chapters_activity_series"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_chapter_activity_series"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:nestedScrollingEnabled="true" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-                        <TextView
-                            android:id="@+id/tv_sr_author_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/author_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+        </androidx.core.widget.NestedScrollView>
 
-                        <TextView
-                            android:id="@+id/tv_author_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tv_sr_author_activity_series"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:hint="@string/hint_author_comic"
-                            android:textSize="12sp" />
+    </RelativeLayout>
 
-                    </RelativeLayout>
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/pb_activity_series"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/tv_sr_artist_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/artist_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_artist_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_sr_artist_activity_series"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:hint="@string/hint_artist_comic"
-                            android:textSize="12sp" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/tv_sr_rating_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rating_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_rating_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tv_sr_rating_activity_series"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:hint="@string/hint_rating_comic"
-                            android:textSize="12sp" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/tv_sr_release_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/release_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_release_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_sr_release_activity_series"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:hint="@string/hint_release_comic"
-                            android:textSize="12sp" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/tv_sr_genre_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/genres_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_genre_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tv_sr_genre_activity_series"
-                            android:textColor="@android:color/black"
-                            android:hint="@string/hint_genre_comic"
-                            android:textSize="12sp" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/tv_sr_synopsis_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/synopsis_activity_series"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_synopsis_activity_series"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_sr_synopsis_activity_series"
-                            android:textColor="@android:color/black"
-                            android:hint="@string/hint_synopsis_comic"
-                            android:textSize="12sp" />
-
-                    </RelativeLayout>
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/button_checkpoint_activity_series"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_checkpoint_activity_series"
-                        android:elevation="8dp"
-                        android:text="@string/text_button_checkpoint_activity_series"
-                        android:visibility="gone"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/chapters_activity_series"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_chapter_activity_series"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:nestedScrollingEnabled="true" />
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

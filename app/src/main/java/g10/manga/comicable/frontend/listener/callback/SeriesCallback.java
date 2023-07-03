@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ import g10.manga.comicable.R;
 import g10.manga.comicable.backend.api.model.ResponseModel;
 import g10.manga.comicable.backend.api.model.series.ChapterModel;
 import g10.manga.comicable.backend.api.model.series.DataModel;
-import g10.manga.comicable.backend.api.model.series.DetailModel;
+import g10.manga.comicable.backend.api.model.series.SeriesModel;
 import g10.manga.comicable.dictionary.app.IntentDictionary;
 import g10.manga.comicable.flag.api.ResponseFlag;
 import g10.manga.comicable.frontend.adapter.activity.series.ChaptersAdapter;
@@ -54,6 +55,8 @@ public class SeriesCallback<T> extends BaseListener implements Callback<T> {
         finally {
             if (responseModel != null) {
                 if (ResponseFlag.isSuccessful(responseModel) || ResponseFlag.isPartiallySuccessful(responseModel)) {
+                    ContentLoadingProgressBar progressBar = activity.findViewById(R.id.pb_activity_series);
+                    progressBar.hide();
                     rvChapters = activity.findViewById(R.id.rv_chapter_activity_series);
                     rvChapters.setHasFixedSize(true);
                     rvChapters.setLayoutManager(new LinearLayoutManager(activity));
@@ -108,7 +111,7 @@ public class SeriesCallback<T> extends BaseListener implements Callback<T> {
         throw new RuntimeException(t);
     }
 
-    private void initDetail(DetailModel model) {
+    private void initDetail(SeriesModel model) {
         toolbar.setTitle(model.getTitle());
 
         Glide.with(activity)

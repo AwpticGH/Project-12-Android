@@ -36,7 +36,7 @@ public class SearchControllerTest {
 
     @Test
     public void withoutPageMessageIsNotFail() {
-        assertNotEquals(responseWithoutPage.getMessage(), ResponseMessages.FAIL);
+        assertNotEquals(responseWithoutPage.getMessage(), ResponseMessages.FAILED);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class SearchControllerTest {
 
     @Test
     public void withPageMessageIsNotFail() {
-        assertNotEquals(responseWithPage.getMessage(), ResponseMessages.FAIL);
+        assertNotEquals(responseWithPage.getMessage(), ResponseMessages.FAILED);
     }
 
     @Test
