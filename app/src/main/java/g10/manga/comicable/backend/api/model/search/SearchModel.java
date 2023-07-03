@@ -1,11 +1,13 @@
 package g10.manga.comicable.backend.api.model.search;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SearchModel {
+public class SearchModel implements Serializable {
 
     private String title;
     private String status;
+    private String release;
     private String type;
     private String rating;
     private String thumbnail;
@@ -26,6 +28,14 @@ public class SearchModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getRelease() {
+        return release;
+    }
+
+    public void setRelease(String release) {
+        this.release = release;
     }
 
     public String getType() {

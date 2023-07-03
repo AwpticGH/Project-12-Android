@@ -8,6 +8,8 @@ public class CheckpointModel extends BaseModel {
     private String collection;
     // Comic chapter
     private String chapter;
+    // Comic endpoint
+    private String endpoint;
 
     public String getUid() {
         return uid;
@@ -31,5 +33,13 @@ public class CheckpointModel extends BaseModel {
 
     public void setChapter(String chapter) {
         this.chapter = chapter;
+    }
+
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
     }
 }

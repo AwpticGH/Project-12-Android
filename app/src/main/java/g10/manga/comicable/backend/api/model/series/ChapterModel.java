@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.api.model.series;
 
-public class ChapterModel {
+import java.io.Serializable;
+
+public class ChapterModel implements Serializable {
 
     private String name;
     private String endpoint;

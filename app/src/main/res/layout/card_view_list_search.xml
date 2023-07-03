@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_search"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_thumbnail_cv_search"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_checkpoint_activity_series"
+            android:src="@drawable/ic_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_cv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:hint="@string/hint_title_comic"
+            app:layout_constraintTop_toTopOf="@id/iv_thumbnail_cv_search"
+            app:layout_constraintStart_toEndOf="@id/iv_thumbnail_cv_search"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_status_cv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hint_status_comic"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_cv_search"
+            app:layout_constraintStart_toStartOf="@id/tv_title_cv_search"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_release_cv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hint_release_comic"
+            app:layout_constraintStart_toStartOf="@id/tv_title_cv_search"
+            app:layout_constraintTop_toBottomOf="@id/tv_status_cv_search"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rating_cv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hint_rating_comic"
+            app:layout_constraintTop_toBottomOf="@id/tv_release_cv_search"
+            app:layout_constraintStart_toStartOf="@id/tv_title_cv_search"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_genre_cv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hint_genre_comic"
+            app:layout_constraintStart_toStartOf="@id/tv_title_cv_search"
+            app:layout_constraintTop_toBottomOf="@id/tv_rating_cv_search"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,10 +1,11 @@
 package g10.manga.comicable.backend.api.model.project;
 
+import java.io.Serializable;
 import java.util.List;
 
 import g10.manga.comicable.backend.api.model.BaseModel;
 
-public class DataModel extends BaseModel {
+public class DataModel extends BaseModel implements Serializable {
 
     private List<ProjectModel> projects;
     private List<PaginationModel> pagination;

@@ -3,7 +3,10 @@ package g10.manga.comicable.backend.app.model.firebase;
 public class CollectionModel extends BaseModel {
 
     private String uid;
+    // Series title
     private String title;
+    // Series endpoint
+    private String endpoint;
     // User uid
     private String user;
 
@@ -21,6 +24,14 @@ public class CollectionModel extends BaseModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
     }
 
     public String getUser() {

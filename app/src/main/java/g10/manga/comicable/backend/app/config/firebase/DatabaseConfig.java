@@ -10,9 +10,9 @@ import g10.manga.comicable.dictionary.firebase.DatabaseDictionary;
 public class DatabaseConfig {
 
     public static DatabaseReference getDatabaseReference(String path) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance(DatabaseDictionary.URL_DEVELOPMENT);
+        FirebaseDatabase database;
+        database = FirebaseDatabase.getInstance(DatabaseDictionary.URL_DEVELOPMENT);
         database.useEmulator("10.0.2.2", 9000);
         return database.getReference(path);
-//        return FirebaseDatabase.getInstance(DatabaseDictionary.URL_PRODUCTION).getReference(path);
     }
 }

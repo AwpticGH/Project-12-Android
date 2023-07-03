@@ -4,57 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frontend.activity.MainActivity">
+    tools:context=".frontend.activity.comic.MainActivity">
 
-        <xyz.sahildave.arclayout.ArcLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:arc_cropCurve="cropConvex"
-            app:arc_height="48dp"
-            app:arc_position="bottom">
+    <include layout="@layout/main_header" />
+    <include layout="@layout/main_toolbar" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:orientation="vertical"
-                android:scaleType="fitXY" />
+    <FrameLayout
+        android:id="@+id/frame_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_main_toolbar"
+        android:layout_above="@id/curve_bottom_bar"
+        />
 
-        </xyz.sahildave.arclayout.ArcLayout>
+    <com.akshay.library.CurveBottomBar
+        android:id="@+id/curve_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        app:bottomBarColor="@color/colorPrimary"
+        app:curveRadius="20dp"
+        app:menu="@menu/menu_navigation"
+        app:itemActiveIndicatorStyle="@style/Theme.Comicable.CurveBottomBar"
+        />
 
-        <include layout="@layout/main_toolbar" />
-
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar">
-
-            <FrameLayout
-                android:id="@+id/frameContainer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <com.akshay.library.CurveBottomBar
-                android:id="@+id/curveBottomBar"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_gravity="bottom"
-                app:bottomBarColor="@color/colorPrimary"
-                app:curveRadius="30dp"
-                app:itemIconTint="@color/selector_navigation"
-                app:itemTextColor="@color/selector_navigation"
-                app:menu="@menu/menu_navigation" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_marginBottom="35dp"
-                android:src="@drawable/ic_comic"
-                app:elevation="4dp"
-                app:fabSize="normal" />
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_home"
+        app:rippleColor="@color/colorAccent"
+        app:elevation="4dp"
+        app:fabSize="normal"
+        app:fabCustomSize="30dp"
+        android:contentDescription="@string/content_desc_floating_action_button" />
 
 </RelativeLayout>

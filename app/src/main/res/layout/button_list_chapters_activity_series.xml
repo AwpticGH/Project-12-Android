@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button_chapter_activity_series"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/button_chapter_activity_series"
+    android:textAllCaps="false"
+    android:textColor="@android:color/white"
+    android:textSize="14sp"
+    />

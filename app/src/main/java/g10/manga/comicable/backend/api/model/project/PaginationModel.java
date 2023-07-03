@@ -1,23 +1,25 @@
 package g10.manga.comicable.backend.api.model.project;
 
-public class PaginationModel {
+import java.io.Serializable;
 
-    private String previous;
-    private String next;
+public class PaginationModel implements Serializable {
 
-    public String getPrevious() {
-        return previous;
+    private String name;
+    private String endpoint;
+
+    public String getName() {
+        return name;
     }
 
-    public void setPrevious(String previous) {
-        this.previous = previous;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNext() {
-        return next;
+    public String getEndpoint() {
+        return endpoint;
     }
 
-    public void setNext(String next) {
-        this.next = next;
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
     }
 }

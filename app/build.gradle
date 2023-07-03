@@ -48,16 +48,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
 
     // CARD GLIDER AND SLIDER
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
 
     implementation 'com.github.IslamKhSh:CardSlider:1.0.1'
     implementation 'xyz.sahildave:arclayout:1.0.0'
     implementation 'com.github.Akshay-Katariya:CurveBottomBar:1.0'
 
     // GOOGLE
-    implementation platform('com.google.firebase:firebase-bom:31.0.3')
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation 'com.google.firebase:firebase-analytics'
@@ -73,12 +72,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
     // RETROFIT
-    implementation 'com.google.code.gson:gson:2.10'
+    implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     // COIL FOR ONLINE IMAGE LOADER
-    implementation("io.coil-kt:coil:2.2.2")
+    implementation('io.coil-kt:coil:2.4.0')
 
     // CARD VIEW
     implementation "androidx.cardview:cardview:1.0.0"

@@ -12,9 +12,9 @@ import java.net.URL;
 
 public class ImageHelper extends Thread {
 
-    private String url;
+    private final String url;
     private Bitmap bitmap;
-    private ImageView imageView;
+    private final ImageView imageView;
     private boolean running;
 
     public ImageHelper(ImageView imageView, String url) {
@@ -35,7 +35,8 @@ public class ImageHelper extends Thread {
                 bitmap = BitmapFactory.decodeStream(inputStream);
 
                 Log.d("Image Helper : decodeStream", "Success");
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 Log.e("Image Helper : decodeStream", "Fail : " + e.getLocalizedMessage());
                 // makeToast
             }
@@ -43,7 +44,8 @@ public class ImageHelper extends Thread {
             if (bitmap != null) {
                 imageView.setImageBitmap(bitmap);
                 Log.d("Image Helper : setImageBitmap", "Success");
-            } else {
+            }
+            else {
                 Log.e("Image Helper : setImageBitmap", "Fail");
                 // makeToast
             }

@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.api.model.search;
 
-public class PaginationModel {
+import java.io.Serializable;
+
+public class PaginationModel implements Serializable {
 
     private String name;
     private String endpoint;

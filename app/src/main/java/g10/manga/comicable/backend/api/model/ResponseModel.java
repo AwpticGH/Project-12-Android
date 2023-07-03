@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.api.model;
 
-public class ResponseModel<T extends BaseModel> {
+import java.io.Serializable;
+
+public class ResponseModel<T extends BaseModel> implements Serializable {
 
     private String status;
     private String message;

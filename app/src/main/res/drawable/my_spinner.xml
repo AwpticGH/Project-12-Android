@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Custom Background -->
+    <item
+        android:gravity="start|center_vertical">
+        <shape>
+            <!-- Define the background properties and colors here -->
+            <gradient
+                android:startColor="@color/colorPrimary"
+                android:endColor="@color/colorAccent"
+                android:angle="-45"
+                />
+            <stroke
+                android:width="1dp"
+                android:color="@android:color/black" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+    <!-- Dropdown Button -->
+    <item
+        android:drawable="@drawable/ic_dropdown"
+        android:gravity="end|center_vertical"
+        >
+    </item>
+</layer-list>

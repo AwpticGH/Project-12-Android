@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.api.model.project;
 
-public class ProjectModel {
+import java.io.Serializable;
+
+public class ProjectModel implements Serializable {
 
     private String title;
     private String type;

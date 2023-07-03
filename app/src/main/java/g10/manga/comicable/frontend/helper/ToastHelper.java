@@ -3,6 +3,7 @@ package g10.manga.comicable.frontend.helper;
 import android.content.Context;
 import android.widget.Toast;
 
+import g10.manga.comicable.dictionary.api.ResponseMessages;
 import g10.manga.comicable.dictionary.app.ToastDictionary;
 
 public class ToastHelper {
@@ -35,6 +36,10 @@ public class ToastHelper {
         return Toast.makeText(context, ToastDictionary.LOGOUT_SUCCESS, Toast.LENGTH_LONG);
     }
 
+    public static Toast logoutFailed(Context context) {
+        return Toast.makeText(context, ToastDictionary.LOGOUT_FAILED, Toast.LENGTH_LONG);
+    }
+
     public static Toast updateUserSuccess(Context context) {
         return Toast.makeText(context, ToastDictionary.UPDATE_USER_SUCCESS, Toast.LENGTH_LONG);
     }
@@ -43,7 +48,43 @@ public class ToastHelper {
         return Toast.makeText(context, ToastDictionary.UPDATE_USER_FAILED, Toast.LENGTH_LONG);
     }
 
-    public static Toast readUserFail(Context context) {
+    public static Toast readUserFailed(Context context) {
         return Toast.makeText(context, ToastDictionary.READ_USER_FAILED, Toast.LENGTH_LONG);
+    }
+
+    public static Toast registerToDatabaseFailed(Context context) {
+        return Toast.makeText(context, ToastDictionary.REGISTER_TO_DATABASE_FAILED, Toast.LENGTH_LONG);
+    }
+
+    public static Toast registerToDatabaseSuccess(Context context) {
+        return Toast.makeText(context, ToastDictionary.REGISTER_TO_DATABASE_SUCCESS, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast registerFailedDueToCollision(Context context) {
+        return Toast.makeText(context, ToastDictionary.REGISTER_FAILED_DUE_TO_COLLISION, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast reattemptRegisterToDatabaseSuccess(Context context) {
+        return Toast.makeText(context, ToastDictionary.REATTEMPT_REGISTER_TO_DATABASE_SUCCESS, Toast.LENGTH_LONG);
+    }
+
+    public static Toast welcomeMessage(Context context) {
+        return Toast.makeText(context, ToastDictionary.WELCOME_MESSAGE, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast apiSuccessful(Context context) {
+        return Toast.makeText(context, ResponseMessages.FULL, Toast.LENGTH_SHORT);
+    }
+
+    public static Toast apiPartiallySuccessful(Context context) {
+        return Toast.makeText(context, ResponseMessages.PARTIAL, Toast.LENGTH_LONG);
+    }
+
+    public static Toast apiFailed(Context context) {
+        return Toast.makeText(context, ResponseMessages.FAILED, Toast.LENGTH_LONG);
+    }
+
+    public static Toast unknownError(Context context) {
+        return Toast.makeText(context, ToastDictionary.UNKNOWN_ERROR, Toast.LENGTH_SHORT);
     }
 }

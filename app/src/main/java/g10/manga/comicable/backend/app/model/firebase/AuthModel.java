@@ -1,7 +1,9 @@
 package g10.manga.comicable.backend.app.model.firebase;
 
+import java.io.Serializable;
+
 // Implements Serializable?
-public class AuthModel extends BaseModel {
+public class AuthModel extends BaseModel implements Serializable {
 
     private String uid;
     private String address;

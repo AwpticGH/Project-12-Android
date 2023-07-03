@@ -1,6 +1,8 @@
 package g10.manga.comicable.backend.api.model.home;
 
-public class HomeModel {
+import java.io.Serializable;
+
+public class HomeModel implements Serializable {
 
     private String title;
     private String type;

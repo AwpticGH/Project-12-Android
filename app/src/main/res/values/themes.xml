@@ -22,4 +22,8 @@
     <style name="Theme.Comicable.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Comicable.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Comicable.CurveBottomBar" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/colorPrimary</item>
+    </style>
 </resources>

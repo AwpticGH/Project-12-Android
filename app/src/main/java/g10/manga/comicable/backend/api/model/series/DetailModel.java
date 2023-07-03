@@ -1,11 +1,13 @@
 package g10.manga.comicable.backend.api.model.series;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DetailModel {
+public class DetailModel implements Serializable {
 
     private String title;
     private String alternative;
+    private String type;
     private String rank;
     private String rating;
     private String author;
@@ -30,6 +32,14 @@ public class DetailModel {
 
     public void setAlternative(String alternative) {
         this.alternative = alternative;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getRank() {

@@ -2,19 +2,32 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="AuthenticationControllerTest">
-        <State />
-      </entry>
       <entry key="Tests in 'g10.manga.comicable'">
         <State />
       </entry>
-      <entry key="Tests in 'g10.manga.comicable.backend.app.controller.firebase.auth'">
+      <entry key="Tests in 'g10.manga.comicable.backend.app.controller.firebase'">
         <State />
       </entry>
       <entry key="app">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\Rafi\.android\avd\Pixel_4a_API_33.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2023-06-30T11:16:05.065040400Z" />
+        </State>
+      </entry>
+      <entry key="testRead()">
         <State />
       </entry>
-      <entry key="testCreate_fail()">
+      <entry key="testUpdateNotEqual()">
         <State />
       </entry>
     </value>
