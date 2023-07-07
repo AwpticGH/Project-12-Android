@@ -39,14 +39,13 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewHolder> {
     public void onBindViewHolder(@NonNull ChapterViewHolder holder, int position) {
         String image = data.get(position);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
         Glide.with(activity.getApplicationContext())
                 .load(image)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .override(holder.getImageView().getWidth(), holder.getImageView().getHeight())
                 .into(holder.getImageView());
+
+        holder.getImageView().setMinimumHeight(holder.getImageView().getWidth() * 11);
     }
 
     @Override
